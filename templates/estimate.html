@@ -7,7 +7,7 @@
 	<h2> Vertical Tank Maintenance</h2>
 
 	<h3> Create an estimate</h3>
-	<form action="/estimate" method="POST">
+	<form action="/estimate" method="GET">
 		<label for="tank_radius">Tank Radius:</label>
 		<input type="text" id="tank_radius" name="tank_radius" />
 		<br>
@@ -16,7 +16,4 @@
 		<br>
 		<input type="submit" id="submit" value="Submit"> 
 	</form>
-{%if estimate%}
-<p>The estimate for painting is $ {{estimate}}</p>
-
-{% endblock %}
+	{% endblock %}
