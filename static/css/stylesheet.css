@@ -16,9 +16,10 @@ ul#navlist {
   font-weight: bold;
   text-align: center;
   font-family: "Times New Roman";
-  padding: 10px;
+  padding: 20px;
 }
 
-#navlist a {
-  padding: 10px 10px;
+
+
+.picture {bottom: 0;
 }
