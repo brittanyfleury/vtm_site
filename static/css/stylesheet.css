@@ -1,3 +1,24 @@
 body {
-  background-color: lightblue;
+  background-color: white;
+}
+
+ul#navlist {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+
+
+#navlist li {
+  display: block ;
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman";
+  padding: 10px;
+}
+
+#navlist a {
+  padding: 10px 10px;
 }
