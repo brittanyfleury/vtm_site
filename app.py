@@ -15,7 +15,6 @@ def about():
 
 @app.route('/estimate', methods=['GET','POST'])
 def estimate():
-    total_estimate=''
     if request.method=="POST":
         radius= float(request.form['tank_weight'])
         height= float(request.form['tank_height'])
@@ -26,10 +25,10 @@ def estimate():
         material_cost= square_feet*25
         labor_cost= square_feet*15
         total_estimate= material_cost+ labor_cost
-        
-        return redirect(url_for('estimate.html'))
-    total_estimate=total_estimate
-    return render_template('estimate.html', pageTitle='Make Estimate', total_estimate=total_estimate,)
+        return "The result is"+total_estimate
+        return redirect(url_for('estimate'))
+  
+    return render_template('estimate.html', pageTitle='Make Estimate', total_estimate=total_estimate)
 
 
    
