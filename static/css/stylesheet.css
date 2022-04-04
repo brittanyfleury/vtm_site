@@ -9,6 +9,21 @@ ul#navlist {
   position: static
 }
 
+#navlist a {
+  padding: 10px 10px;
+}
+
+#navlist a:link, #navlist a:visited {
+  color: #fff;
+  background-color: blue;
+  text-decoration: none;
+}
+
+#navlist a:hover {
+  color: blue;
+  background-color: #d5d5d5;
+  text-decoration: none;
+}
 
 
 #navlist li {
@@ -16,11 +31,17 @@ ul#navlist {
   float: left;
   font-weight: bold;
   text-align: center;
+  color:white
   font-family: "Times New Roman";
   padding: 20px;
 }
 
-
+#menubar {
+  background-color: blue;
+  width: 100%;
+  overflow: hidden;
+  clear:both
+}
 
 .picture {bottom: 0;
 }

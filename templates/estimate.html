@@ -4,10 +4,10 @@
 
 {% block body %}
 
-	<h2> Vertical Tank Maintenance</h2>
+
 
 	<h3> Create an estimate</h3>
-	<form action="/estimate" method="GET" method= "POST">
+	<form action="/estimate" method= "POST">
 		<label for="tank_radius">Tank Radius:</label>
 		<input type="text" id="tank_radius" name="tank_radius" />
 		<br>
@@ -18,14 +18,8 @@
 		<input type="reset" value="Clear" /> 
 	</form>
 	
-	<p>The estimated price is ${{total_estimate}}
+{% if estimate %}
+<p> Total estimate is $ {{estimate}} </p>
+{% endif %}
 
-	</p>
-
-{% for number in total_estimate %}
-<tr>
-  <td>{{ total_estimate }}</td>
-</tr>
-{% endfor %}
-	
-	{% endblock %}
+{% endblock %}
