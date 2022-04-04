@@ -1,6 +1,6 @@
 from cmath import pi
-from flask import Flask
-from flask import render_template
+from flask import Flask, redirect
+from flask import render_template, redirect, request, url_for
 from flask import request
 
 app = Flask(__name__)
@@ -13,9 +13,25 @@ def index():
 def about():
     return render_template('about.html', pageTitle='About Vertical Tank Maintenance')
 
-@app.route('/estimate')
+@app.route('/estimate', methods=['GET','POST'])
 def estimate():
-    return render_template('estimate.html', pageTitle=' VTM Estimator')
+    total_estimate=''
+    if request.method=="POST":
+        radius= float(request.form['tank_weight'])
+        height= float(request.form['tank_height'])
+        area_tank_top= pi* radius^2
+        area_sides=2*(pi(radius*height))
+        total_area= area_tank_top + area_sides
+        square_feet= total_area/144
+        material_cost= square_feet*25
+        labor_cost= square_feet*15
+        total_estimate= material_cost+ labor_cost
+        
+        return redirect(url_for('estimate.html'))
+    total_estimate=total_estimate
+    return render_template('estimate.html', pageTitle='Make Estimate', total_estimate=total_estimate,)
+
+
    
 
 
