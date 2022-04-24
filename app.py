@@ -30,8 +30,6 @@ def estimate():
     return render_template('estimate.html', pageTitle='Make Estimate')
 
 
-   
-
 
 if __name__ == '__main__':
     app.run(debug=True)
