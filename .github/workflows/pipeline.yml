@@ -82,9 +82,6 @@ jobs:
           name: python-app
           path: |
             ./BUILD
-
-
-
  deploy:
     runs-on: ubuntu-latest
     needs: build
